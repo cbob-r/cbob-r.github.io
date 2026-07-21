@@ -11,13 +11,22 @@
 
 <body>
     <div class = "background">
-        <div class = "container">
-            <p>Plethoric obfuscation in dialogue can source ambiguity and obviate logical, coherent, and meaningful conveyance of conceptualizations. Don't be pretentious! </p>
+        <div class = "containerNoBottom">
+           
             <div class = "span">
                 <img src = "images/ferret.jpg">
-                 <h1> <a href="/love"> <em> have a nice day ! </em></a> </h1>
-                <p>ask me anything about: <br> rally, raves, power plants, holographics <br> cuz i love those. </p>
+                <div class = "column">
+                    <p> <a href="/love"> <em> have a nice day ! </em></a> </p>
+                <button id="button" type="button" onclick = toggleButton("button")> press me :3 </button>
+                </div> 
             </div>
         </div>
+        <div class = "inside"> 
+            <h1 id = "clock"> 00:00:00 </h1>
+            <p id = "opinion"> huh. nice </p>
+        </div>
     </div>
+    
+    <script src="javascript.js"></script>
+
 </body>
