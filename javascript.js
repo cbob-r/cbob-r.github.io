@@ -51,7 +51,7 @@ function updateOpinion() {
 
 function SPLASH() {
   const splashes = [
-    "Your's truly",
+    "Your's truly [sic]",
     "Friendly",
     "I don't bite",
     "im not doing that bro",
