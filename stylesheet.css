@@ -5,11 +5,28 @@
   font-style: normal;
 }
 
+
 p {
   color:rgb(255, 255, 255);
   text-align: center;
   font-family: 'Montserrat';
   font-weight: 400;
+}
+
+p.splash {
+  margin:  2vw 2vw;
+  color:rgb(255, 219, 59);
+  font-family: 'Montserrat';
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+p.title {
+  margin:  2vw 2vw;
+  color:rgb(255, 79, 47);
+  font-family: 'Montserrat';
+  font-weight: 900;
+  font-size: 5rem;
 }
 
 p.fit {
@@ -47,11 +64,22 @@ img {
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url('images/background.webp');
   background-size: cover;
 }
+
+div.title {
+  margin:  0.5vw 2vw;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
 
 div.container {
   margin:  2vw 2vw;
