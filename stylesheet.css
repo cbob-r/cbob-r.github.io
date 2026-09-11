@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@keyframes typing {
+  from {width: 0;} to {width: 100%;}
+}
+
+@keyframes blink-caret {
+  50% {border-color: transparent;}
+}
 
 p {
   color:rgb(255, 255, 255);
@@ -19,7 +26,57 @@ p.splash {
   font-family: 'Montserrat';
   font-weight: 800;
   font-size: 3rem;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: blink-caret 1s step-end infinite;
 }
+
+.block {
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: rgb(80, 80, 80);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1rem;
+  border-top: 2px solid rgb(120, 120, 120);
+  border-bottom: 2px solid rgb(20, 20, 20);
+  border-left: 2px solid rgb(20, 20, 20);
+  border-right: 2px solid rgb(20, 20, 20);
+  padding: 1rem;
+  min-width: 10rem;
+}
+
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: rgb(80, 80, 80);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1rem;
+  border-top: 2px solid rgb(120, 120, 120);
+  border-bottom: 2px solid rgb(20, 20, 20);
+  border-left: 2px solid rgb(20, 20, 20);
+  border-right: 2px solid rgb(20, 20, 20);
+  padding: 1rem;
+  min-width: 10rem;
+  cursor: pointer;
+}
+
+.button:active {
+  border-bottom: 2px solid rgb(100, 100, 100);
+  border-top: 2px solid rgb(30, 30, 30);
+  border-left: 2px solid rgb(50, 50, 50);
+  border-right: 2px solid rgb(50, 50, 50);
+}
+
 
 p.title {
   margin:  2vw 2vw;
@@ -45,10 +102,6 @@ h1 {
   text-align: center;
   font-family: 'Montserrat';
   font-weight: 700;
-}
-
-a {
-  color:slategray;
 }
 
 img {
@@ -130,11 +183,10 @@ div.span {
   justify-content: space-between;
   display: flex;
   flex-direction: row;
-  gap: 1vw;
+  gap: 2vw;
 } 
 
 div.column {
-  margin:  0.5vw 2vw;
   align-items: center;
   justify-content: space-between;
   display: flex;

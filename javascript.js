@@ -5,36 +5,40 @@ function toggleButton(id) {
     bool = !bool;
     count = count + 1
     if (bool == true) {
-        document.getElementById(id).innerHTML = "bingo";
+        document.getElementById(id).textContent = "bingo";
     }
     if (bool == false) {
-        document.getElementById(id).innerHTML = "bongo";
+        document.getElementById(id).textContent = "bongo";
     }
     if (count >= 20) {
         bool = 0
-        document.getElementById(id).innerHTML = "oohh";
+        document.getElementById(id).textContent = "oohh";
     }
     if (count >= 30) {
         bool = 0
-        document.getElementById(id).innerHTML = "bussssss";
+        document.getElementById(id).textContent = "bussssss";
     }
+}
+
+function freakButton(id) {
+  document.getElementById(id).textContent = "alright chill";
 }
 
 // you cheeky bastard
 function updateOpinion() {
     let now = new Date().getHours()
-    if (now == 0) {document.getElementById("opinion").innerHTML = "Midnight! the time I realize it's bedtime, but stay up anyway"}
-    if (now == 1) {document.getElementById("opinion").innerHTML = "I hope you have a wonderful night. Don't forget to sleep :3"}
-    if (now == 2) {document.getElementById("opinion").innerHTML = "I remember many dreams about people close to me. You're in one!"}
-    if (now == 3) {document.getElementById("opinion").innerHTML = "the turning point"}
-    if (now == 4) {document.getElementById("opinion").innerHTML = "You should sleep. You still got time, it's better than none :P"}
-    if (now == 5) {document.getElementById("opinion").innerHTML = "make night society real! some people prefer night!"}
-    if (now == 6) {document.getElementById("opinion").innerHTML = "Starting the day this early is cool. Respectable."}
-    if (now == 7) {document.getElementById("opinion").innerHTML = "Good morning! Today is a ... Friday! Was I right? Its a 1/7 chance."}
-    if (now == 8) {document.getElementById("opinion").innerHTML = "8 in the morning can either be a crazy vibe, or really annoying."}
-    if (now == 9) {document.getElementById("opinion").innerHTML = "The chance I'm something you think I'm not is low, but never zero."}
+    if (now == 0 ) {document.getElementById("opinion").innerHTML = "Midnight! the time I realize it's bedtime, but stay up anyway"}
+    if (now == 1 ) {document.getElementById("opinion").innerHTML = "I hope you have a wonderful night. Don't forget to sleep :3"}
+    if (now == 2 ) {document.getElementById("opinion").innerHTML = "I remember many dreams about people close to me. You're in one!"}
+    if (now == 3 ) {document.getElementById("opinion").innerHTML = "the turning point"}
+    if (now == 4 ) {document.getElementById("opinion").innerHTML = "You should sleep. You still got time, it's better than none :P"}
+    if (now == 5 ) {document.getElementById("opinion").innerHTML = "make night society real! some people prefer night!"}
+    if (now == 6 ) {document.getElementById("opinion").innerHTML = "Starting the day this early is cool. Respectable."}
+    if (now == 7 ) {document.getElementById("opinion").innerHTML = "Good morning! Today is a ... Friday! Was I right? Its a 1/7 chance."}
+    if (now == 8 ) {document.getElementById("opinion").innerHTML = "8 in the morning can either be a crazy vibe, or really annoying."}
+    if (now == 9 ) {document.getElementById("opinion").innerHTML = "The chance I'm something you think I'm not is low, but never zero."}
     if (now == 10) {document.getElementById("opinion").innerHTML = "Imagine life if you had a breath counter. Just as a statisitic."}
-    if (now == 11) {document.getElementById("opinion").innerHTML = "I love you! Love is a strong word. I love you! Love is a strong..."}
+    if (now == 11) {document.getElementById("opinion").innerHTML = "Someone needs to die for the tyranny being committed"}
     if (now == 12) {document.getElementById("opinion").innerHTML = "make up your own text for this space"}
     if (now == 13) {document.getElementById("opinion").innerHTML = "my favorite colour is a deep red orange."}
     if (now == 14) {document.getElementById("opinion").innerHTML = "You probably think I'm smart for making this......"}
@@ -51,21 +55,45 @@ function updateOpinion() {
 
 function SPLASH() {
   const splashes = [
-    "Your's truly [sic]",
-    "Friendly",
-    "I don't bite",
+    "your's truly [sic]",
+    "Yours truly",
+    "friendly",
+    "i don't bite",
     "im not doing that bro",
-    "Say hi!",
-    "Why hate?",
+    "say hi!",
+    "why hate?",
     "zaza hq",
     "um",
     "bazinga",
     "pouseyclat",
     "also im shronking it",
+    "pigging out",
+    "shhh",
+    "pss pss pss",
+    ">w<",
+    "^w^",
   ];
 
-  const chosen = splashes[Math.floor(Math.random() * splashes.length)];
-  document.getElementById("splash-text").textContent = chosen;
+ const chosen = splashes[Math.floor(Math.random() * splashes.length)];
+  const splashText = document.getElementById("splash-text");
+
+  splashText.textContent = "";
+  let i = 0;
+  const approxSpeed = 80 + (Math.random() * 10)
+
+  function type() {
+    if (i < chosen.length) {
+      splashText.textContent += chosen[i];
+      i++;
+      setTimeout(type, approxSpeed);
+    }
+  }
+  type();
+}
+
+function typeOut(element) {
+  let length = element.length
+  return length
 }
 
 function updateClock() {
